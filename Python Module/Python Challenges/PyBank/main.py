@@ -29,6 +29,7 @@ with open(budget_csv) as csvfile:
     csv_header = next(csvreader)
 
     for row in csvreader:
+        
         date_column = row[0]
         revenue_column = row[1]
         revenue_column_int = int(revenue_column)
@@ -49,7 +50,7 @@ with open(budget_csv) as csvfile:
             min_dif = revenue_dif
             min_date = date_column
             
-        previous_value = revenue_column_int
+        #previous_value = revenue_column_int
         #Count Month
         total_months = total_months + 1
         
@@ -68,7 +69,10 @@ output =(f'Financial Analysis\n'
          f'Greatest Increase in Profits: {max_date} : $ ({max_dif})\n'
          f'Greatest Decrease in Profits: {min_date} : ($ {min_dif})\n')
 print(output)
-
+"""
+print(rev_dif_list)
+print(len(rev_dif_list))
+print(sum(rev_dif_list))
 #Export to TXT File 
 file_to_output = os.path.join("Analysis", "final.txt")
 with open(file_to_output, "w") as txt_file:
@@ -87,5 +91,4 @@ with open(file_to_output, "w") as txt_file:
     
     
     
-    
-    
+    """
